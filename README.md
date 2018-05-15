@@ -5,7 +5,24 @@ Sugar high simple API
 
 BJA requires latest [Golang](https://golang.org/doc/install) to run.
 
-### Run the app
+### Build and run the app (Optional)
+Go to project folder and type:
+
+```sh
+$ cd BJA
+$ go build
+$ ./BJA
+```
+
+### Run the app (Not built)
+Go to project folder and type:
+
+```sh
+$ cd BJA
+$ go run main.go
+```
+
+### Interact with the app
 Login using default username and password to get token.
 Token expires after 10 mins.
 

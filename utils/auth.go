@@ -20,12 +20,14 @@ func (at *Auth) CheckPasswordHash(password, hash string) bool {
 }
 
 func (at *Auth) CreateToken(id string) string {
-	// Embed Admin information to `token`
-	token := jwt.New(jwt.GetSigningMethod("HS256"))
-	token.Claims["userid"] = id
+	token := jwt.New(jwt.SigningMethodHS256)
+	claims := make(jwt.MapClaims)
 
-	// Expire in 10 mins
-	token.Claims["exp"] = time.Now().Add(time.Minute * 10).Unix()
+	// Embed Admin information to `token` and Expire in 10 mins
+	claims["userid"] = id
+	claims["exp"] = time.Now().Add(time.Minute * 10).Unix()
+	token.Claims = claims
+
 	tokenString, err := token.SignedString([]byte(at.SecretKey))
 	if err != nil {
 		return "Error occured"
