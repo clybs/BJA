@@ -94,3 +94,10 @@ Run the docs:
 $ godoc -http=":6060"
 ```
 Then visit: [http://localhost:6060/pkg/github.com/clybs/](http://localhost:6060/pkg/github.com/clybs/)
+
+### Dev Notes
+- Decided to go with GoCraft for framework as it is super fast and minimal. It also 
+has nested routers, contexts, and middleware.
+- Decided to use JWT as it stateless self contained token which has authetication 
+information, expire time information, and other user defined claims 
+digitally signed. Portable: A single token can be used with multiple backends. Good Performance: It reduces the network round trip time 
