@@ -37,10 +37,48 @@ $ curl -X POST \
 Create an ice cream detail. Use token from login.
 ```sh
 $ curl -X POST \
-    http://localhost:3000/icecreams \
-    -H 'Authorization: Bearer <token>' \
-    -H 'Cache-Control: no-cache' \
-    -H 'Content-Type: application/json' 
+      http://localhost:3000/icecreams \
+      -H 'Authorization: Bearer <token>' \
+      -H 'Cache-Control: no-cache' \
+      -H 'Content-Type: application/json' \
+      -d '{
+      "name": "Everything But The...",
+      "image_closed": "/files/live/sites/systemsite/files/flavors/products/us/pint/open-closed-pints/vanilla-toffee-landing.png",
+      "image_open": "/files/live/sites/systemsite/files/flavors/products/us/pint/open-closed-pints/vanilla-toffee-landing-open.png",
+      "description": "Vanilla Ice Cream with Fudge-Covered Toffee Pieces",
+      "story": "Vanilla What Bar Crunch? We gave this flavor a new name to go with the new toffee bars we’re using as part of our commitment to source Fairtrade Certified and non-GMO ingredients. We love it and know you will too!",
+      "sourcing_values": [
+        "Non-GMO",
+        "Cage-Free Eggs",
+        "Fairtrade",
+        "Responsibly Sourced Packaging",
+        "Caring Dairy"
+      ],
+      "ingredients": [
+        "cream",
+        "skim milk",
+        "liquid sugar",
+        "water",
+        "sugar",
+        "coconut oil",
+        "egg yolks",
+        "butter",
+        "vanilla extract",
+        "almonds",
+        "cocoa (processed with alkali)",
+        "milk",
+        "soy lecithin",
+        "cocoa",
+        "natural flavor",
+        "salt",
+        "vegetable oil",
+        "guar gum",
+        "carrageenan"
+      ],
+      "allergy_info": "may contain wheat, peanuts and other tree nuts",
+      "dietary_certifications": "Kosher",
+      "productId": "646"
+    }'
 ```
 
 Read details of an ice cream. Use token from login.
